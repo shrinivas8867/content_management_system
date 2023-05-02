@@ -1,0 +1,68 @@
+<div *ngIf="!ststus" class="card-contents">
+    <mat-card id ="bgrnd" mat-ripple >
+        <mat-card-header>
+            <h1>Edit the content</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <form id="edit-form">
+                <mat-form-field class="input-field">
+                    <mat-label>Content Title</mat-label>
+                    <input matInput [(ngModel)]="lists.content" name="title" type="text">
+                </mat-form-field>
+                <mat-form-field class="input-field">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput [(ngModel)]="lists.description" name="content" type="text"></textarea>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        
+        <mat-card-actions>
+            <div class="row">
+                <div class="col-md-4">
+            <button   mat-button (click)="editCont()">Save</button>
+                </div>
+                <div class="col-md-4">
+            <button id="icon"  mat-icon-button (click)="deleteCont()">
+                <mat-icon>delete</mat-icon>
+            </button>
+                </div>
+                <div class="col-md-4">
+                    <button mat-button routerLink="/viewcontents">Back</button>
+                </div>
+            </div>
+    
+        </mat-card-actions>
+    
+    </mat-card>
+    </div>
+    <div *ngIf="ststus">
+        <mat-card id="cardtext">
+            <mat-card-header>
+                <h1>Name- {{lists.firstname}} {{lists.lastname}}</h1>
+            </mat-card-header><br>
+            <mat-card-content>
+                <h2>Email- {{lists.email}}</h2>
+                <h2>Mobile Number- {{lists.pnumber}}</h2>
+                <h2>Gender- {{lists.gender}}</h2>
+                <h2>Password- {{lists.password}}</h2>
+            </mat-card-content> 
+        </mat-card>
+        <div class="row" id="body">
+            <div class="col-lg-3" *ngFor="let list of lists.contentList">
+                <mat-card id="cardtext">
+                    <mat-card-header>
+                        <mat-card-title><h1>{{list.content}}</h1></mat-card-title>
+                        <!-- <h2>{{list.contentid}}</h2> -->
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h3>{{list.description}}</h3>
+                    </mat-card-content><br>
+                    <h5>{{list.date}}</h5>   
+                </mat-card>
+            </div>
+        </div>
+        <h1>Want to change Status</h1>
+        <button *ngIf="viewButton" (click)="activate()" mat-button>Activate</button>
+        <button *ngIf="!viewButton" (click)="deactivate()" mat-button>Deactivate</button>
+        <button mat-button routerLink="/userdetails">Back</button>
+    </div>

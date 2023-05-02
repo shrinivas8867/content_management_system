@@ -1,0 +1,18 @@
+server:
+  port: 9500
+spring:
+  application:
+    name: api-gateway-service
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        cors-Configurations:
+          '[/**]':
+            allowed-Origins: "http://localhost:4200"
+            allowed-Methods: "*"
+            allowed-Headers: "*"
+            allo w-Credentials: true

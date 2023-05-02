@@ -1,0 +1,24 @@
+<div id="icon">
+    <button mat-button (click)="add()" ><h3>Add New Content</h3></button>
+</div>
+<br>
+<br>
+<div class="cards" *ngIf="view">  
+    <div class="card" id="items">
+        <h4>Add New Content</h4>
+        <div>
+            <mat-form-field class="id">
+                <input matInput type="number" placeholder="id" [(ngModel)]="lists.contentid" required>
+            </mat-form-field>
+            
+            <mat-form-field>
+                <input matInput type="text" placeholder="Note Title" [(ngModel)]="lists.content" name="title" required><br>
+            </mat-form-field>
+        </div>
+        <mat-form-field class="input">
+            <textarea matInput   maxlength="500" placeholder="Note Content" [(ngModel)]="lists.description" name="content"></textarea><br>
+        </mat-form-field>
+        <button mat-button type="button" (click)="addcont()">Save</button>
+    </div>
+</div>
+

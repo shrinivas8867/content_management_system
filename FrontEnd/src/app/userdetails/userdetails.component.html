@@ -1,0 +1,18 @@
+<div>
+    <li *ngFor="let lists of statuslist; let i=index;">
+        <mat-card id="cardtext" routerLink="../edit/{{lists?.email}}">
+            <mat-card-header >
+                <mat-card-title><h1>{{lists.email}}</h1></mat-card-title>
+                 <h1>{{lists.email}}</h1>
+            </mat-card-header>
+            <mat-card-content>
+                <h1>{{lists.role}}</h1>
+            </mat-card-content>
+            <mat-card-content>
+                <h1>{{lists.status}}</h1>
+            </mat-card-content>
+            
+        </mat-card>
+
+    </li>
+</div>

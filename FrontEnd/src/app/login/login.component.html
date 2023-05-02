@@ -1,0 +1,46 @@
+<div id="login" >
+    <form (ngSubmit)="login()" [formGroup]="log">
+    <div class="row">
+    <div  class="col-md-5 card" id="cards">
+        <div>
+            <h1>Login Here</h1>
+<mat-form-field>
+    <mat-label>Enter User Email</mat-label>
+    <input matInput type="email" placeholder="Email" name="eventemail" formControlName="email">
+    <mat-error class="error" *ngIf="eventemail?.errors?.['email']">
+        Enter valid email address
+    </mat-error>
+</mat-form-field>
+</div>
+<div>
+<mat-form-field>
+    <mat-label>Enter Password </mat-label>
+    <input matInput type="password" placeholder="Password" name="eventpassword" formControlName="password">
+    <mat-error class="error" *ngIf="eventpassword?.errors?.['pattern']">
+        Password should have mim 8 letter password,with at least a symbol,upper and lower case letters and a number
+    </mat-error>
+</mat-form-field>
+</div  >
+<div>
+    <button mat-raised-button type="submit">Submit</button>
+</div>
+<div>
+
+</div>
+</div>
+<div class="col-md-5 card" id="cards">
+    <div class="back">
+    <h1>If you are new user Click Here on Sign-Up</h1>
+    <button mat-button routerLink="/register">Sign-Up</button>
+   </div>
+   
+</div>
+    </div> 
+    </form>
+
+
+
+</div>
+<div class="back">
+    <button mat-button routerLink="/home">Back</button>
+    </div>

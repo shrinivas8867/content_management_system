@@ -1,0 +1,102 @@
+<div  class="cards">
+<div class="m-5 card" id="background">
+
+<form (ngSubmit)="adduser()" [formGroup]="forms">
+    <div class="row">
+        <div class="col-md-6">
+        <h1 class="ms-3">Registration Form</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">     
+            <mat-form-field>
+                <input matInput type="text" placeholder="First Name" name="eventFirst" formControlName="firstname" required>
+                <mat-error class="error" *ngIf="eventFirst?.errors?.['required']">
+                    First Name is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">    
+            <mat-form-field>
+                <input matInput type="text" placeholder="Last Name" name="eventLast" formControlName="lastname"  >
+                <mat-error class="error" *ngIf="eventLast?.errors?.['minlength']">
+                    Last Name should have minimum of 2 characters
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <mat-form-field style="width: 550px;">
+                <input matInput type="email" placeholder="Email" name="eventemail" formControlName="email">
+                <mat-error class="error" *ngIf="eventemail?.errors?.['email']">
+                    Enter valid email address
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div> 
+    <div class="row">
+        <div >
+            <mat-form-field style="width:550px;">
+                <input matInput type="password" placeholder="Password" name="eventpassword" formControlName="password">
+                <mat-error class="error" *ngIf="eventpassword?.errors?.['pattern']">
+                    Password should have mim 8 letter password,with at least a symbol,upper and lower case letters and a number
+                </mat-error>
+            </mat-form-field>
+        </div>
+         
+    </div>
+    <div class="row ms-3">
+        <mat-radio-group aria-label="Select an Option" formControlName="gender">
+            <span class="mat-headline-6" >Gender</span>
+            <mat-radio-button *ngFor="let gen of genders" [value]="gen">{{gen}}</mat-radio-button>  
+        </mat-radio-group>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput type="number" placeholder="Age" name="eventage" formControlName="age">
+                <mat-error class="error" *ngIf="eventage?.errors?.['min']">
+                    Age must be 18 years and above
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput type="tel" placeholder="Phone Number" name="eventphone" formControlName="pnumber" pattern="[7-9]{1}[0-9]{9}" maxlength="10">
+                <mat-error class="error" *ngIf="eventphone?.errors?.['pattern']">
+                    Valid phone number contanis 10 digits starting with 7/8/9
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div> 
+    <div class="row ms-3">
+        <mat-radio-group aria-label="Select an Option" formControlName="role">
+            <span class="mat-headline-6" >Role</span>
+            <mat-radio-button *ngFor="let rol of role" [value]="rol">{{rol}}</mat-radio-button>  
+        </mat-radio-group>
+    </div>  
+    <div *ngIf="forms.value.role=='admin_admin'">
+        <mat-form-field>
+            <input matInput type="password" [(ngModel)]="code">
+
+        </mat-form-field>
+    </div> 
+    
+    <div class="row">
+        <div class="col-md-6">
+            <button mat-raised-button type="reset"  class="m-3 p-2" id="reset">Reset</button>
+        </div>
+        <div class="col-md-6">
+            <button mat-raised-button [disabled]="forms.invalid" type="submit"  class="m-3 p-2" >Submit</button>
+        </div>
+    </div>
+    <!-- <button mat-raised-button type="reset" color="accent"  class="m-3 p-2">Reset</button>
+    
+    <button mat-raised-button [disabled]="forms.invalid" type="submit"  class="m-3 p-2" >Submit</button>     -->
+    
+</form>
+</div>
+</div>
+
+{{forms.value|json}}

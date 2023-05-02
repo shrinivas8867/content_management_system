@@ -1,0 +1,43 @@
+#items{
+    
+    width: 350px;
+    padding: 20px;
+    box-shadow: 0px 2px 7px  antiquewhite;
+    margin-bottom: 50px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    transform: translate(0%,-5%);
+    margin-top: 50px;
+}
+#items:hover{
+    box-shadow: 0px 2px 50px antiquewhite;
+    
+}
+.cards{
+     display: flex;
+     justify-content: center;
+    
+     
+}
+
+.id{
+    width: 50px;
+    margin-right: 20px;
+}
+#icon{
+   
+   
+   text-align: center;
+}
+#icon button{
+    background-color: red;
+    color: antiquewhite;
+    padding-top: 15px;
+    width: 300;
+    
+}
+.input{
+    width: 300px;
+}
+button{
+    background-color: red;
+}

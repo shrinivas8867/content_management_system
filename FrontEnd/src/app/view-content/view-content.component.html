@@ -1,0 +1,3 @@
+<app-add-content *ngIf="!view" (addText)="onAddText($event)"></app-add-content>
+<app-content *ngIf="!view" [cont]="cont"></app-content>
+<app-userdetails *ngIf="view" [statuslist]="statuslis"></app-userdetails>

@@ -1,0 +1,54 @@
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+h1{
+  margin: 10px;
+  font-size: 50px;
+  padding: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+ 
+}
+.navbar{
+  color: antiquewhite;
+  background-color: transparent;
+}
+ul li{
+  display:inline-block;
+  list-style: none;
+  margin: 10px 30px;
+  position: relative;
+}
+
+ul li p::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: antiquewhite;
+  transition: width 0.3s;
+}
+
+ul li p:hover::after{
+  width: 60%;
+}
+
+
+
+

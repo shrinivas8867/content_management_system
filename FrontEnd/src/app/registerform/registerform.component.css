@@ -1,0 +1,30 @@
+h1{
+    color: blueviolet;
+    font-weight: bold;
+    color: antiquewhite;
+}
+button{
+    width: 150px;
+}
+#background{
+         
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    transform: translate(0%,-5%);
+    width: 700px;
+    margin: 20px; 
+    height: 800px;  
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    text-align: center;
+}
+.single{
+    
+    align-items: center;
+}
+#reset{
+    background-color: red;
+}

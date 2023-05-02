@@ -1,0 +1,23 @@
+
+  
+ 
+    <mat-toolbar class="navbar">
+
+      <h1>CoMS</h1>
+      <span class="example-spacer"></span>
+
+       <ul>
+        <li routerLink="/home"><p>Home</p></li>
+        <li><p>About</p></li>
+        <li><p>Contact</p></li>
+        <li *ngIf="view" routerLink="/home" (click)="logOut()"><p>LogOut</p></li>
+       </ul>
+    </mat-toolbar>
+
+    
+    
+    <router-outlet></router-outlet>
+    
+  
+
+   

@@ -1,0 +1,14 @@
+<div class="row" id="body">
+    <div class="col-lg-3" *ngFor="let lists of cont">
+        <mat-card id="cardtext" routerLink="../edit/{{lists?.contentid}}">
+            <mat-card-header>
+                <mat-card-title><h1>{{lists.content}}</h1></mat-card-title>
+                <h2>{{lists.contentid}}</h2>
+            </mat-card-header>
+            <mat-card-content>
+                <h3>{{lists.description}}</h3>
+            </mat-card-content><br>
+            <h5>{{lists.date}}</h5>   
+        </mat-card>
+    </div>
+</div>
